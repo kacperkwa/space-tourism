@@ -135,7 +135,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 3rem;
+  padding: 0 2rem;
   height: 100%;
 }
 .header__intro {
