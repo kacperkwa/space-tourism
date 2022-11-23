@@ -1,0 +1,16 @@
+/* font-family: 'Barlow', sans-serif;
+font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Bellefair', serif; */
+@use '../abstracts/colors' as c;
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Bellefair', serif;
+	color: c.$headingColor;
+}
+body {
+	color: white;
+	font-family: 'Barlow', sans-serif;
+	color: c.$textColor;
+}
