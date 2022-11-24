@@ -1,4 +1,4 @@
-const menuButton = document.querySelector('.nav-container__menu-button');
+const menuButton = document.querySelector('.nav-container-mobile__menu-button');
 const navigationMobile = document.querySelector('.navigation-mobile');
 const menuButtonImg = document.querySelector('.menu-button-img');
 

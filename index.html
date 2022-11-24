@@ -16,16 +16,29 @@
 </head>
 
 <body>
-   <div class="nav-container">
-      <img class="nav-container__logo" src="./img/shared/logo.svg" alt="logo">
-      <button class="nav-container__menu-button"><img src="./img/shared/icon-hamburger.svg"
-            alt="menu-button" class="menu-button-img"></button>
+   <!-- small devices -->
+   <div class="nav-container-mobile">
+      <img class="nav-container-mobile__logo" src="./img/shared/logo.svg" alt="logo">
+      <button class="nav-container-mobile__menu-button"><img src="./img/shared/icon-hamburger.svg" alt="menu-button"
+            class="menu-button-img"></button>
       <nav class="navigation-mobile">
          <ul role="list" class="navigation-mobile__list">
-            <li class="navigation-mobile__item selected-page-mobile"><a  href="#home"><span>00</span> home</a></li>
+            <li class="navigation-mobile__item selected-page-mobile"><a href="#home"><span>00</span> home</a></li>
             <li class="navigation-mobile__item"><a href="#"><span>01</span> destination</a></li>
             <li class="navigation-mobile__item"><a href="#"><span>02</span> crew</a></li>
             <li class="navigation-mobile__item"><a href="#"><span>03</span> technology</a></li>
+         </ul>
+      </nav>
+   </div>
+   <!-- large devices -->
+   <div class="nav-container-desktop">
+      <img class="nav-container-desktop__logo" src="./img/shared/logo.svg" alt="logo">
+      <nav class="navigation-desktop">
+         <ul role="list" class="navigation-desktop__list">
+            <li class="navigation-desktop__item selected-page-desktop"><a href="#home"><span>00</span> home</a></li>
+            <li class="navigation-desktop__item"><a href="#"><span>01</span> destination</a></li>
+            <li class="navigation-desktop__item"><a href="#"><span>02</span> crew</a></li>
+            <li class="navigation-desktop__item"><a href="#"><span>03</span> technology</a></li>
          </ul>
       </nav>
    </div>

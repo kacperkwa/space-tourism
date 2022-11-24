@@ -148,6 +148,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 3rem;
+  max-width: 450px;
 }
 .header__upper-heading-text {
   font-family: "Barlow Condensed", sans-serif;
@@ -176,6 +177,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 2rem;
   min-width: 150px;
   min-height: 150px;
   border-radius: 100%;
@@ -225,7 +227,40 @@ body {
   }
 }
 
-.nav-container {
+@media (min-width: 576px) {
+  .header {
+    background-image: url(../img/home/background-home-tablet.jpg);
+  }
+  .header__container {
+    padding-top: 20rem;
+  }
+  .header__upper-heading-text {
+    font-size: 2rem;
+    letter-spacing: 3.38px;
+  }
+  .header__title {
+    font-size: 15rem;
+  }
+  .header__text {
+    font-size: 16px;
+  }
+  .header__intro {
+    gap: 2rem;
+  }
+  .header__circle {
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 100%;
+  }
+  .header__circle p {
+    font-size: 3.2rem;
+  }
+}
+.nav-container-desktop {
+  display: none;
+}
+
+.nav-container-mobile {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,13 +274,13 @@ body {
   padding: 2rem;
   z-index: 10;
 }
-.nav-container__menu-button {
+.nav-container-mobile__menu-button {
   z-index: 15;
 }
-.nav-container__menu-button .menu-button-img-change {
+.nav-container-mobile__menu-button .menu-button-img-change {
   content: url("../img/shared/icon-close.svg");
 }
-.nav-container .navigation-mobile {
+.nav-container-mobile .navigation-mobile {
   display: none;
   position: relative;
   -webkit-box-align: center;
@@ -261,7 +296,7 @@ body {
   -webkit-backdrop-filter: blur(40.7742px);
           backdrop-filter: blur(40.7742px);
 }
-.nav-container .navigation-mobile__list {
+.nav-container-mobile .navigation-mobile__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,7 +309,7 @@ body {
           flex-direction: column;
   gap: 4rem;
 }
-.nav-container .navigation-mobile .selected-page-mobile::after {
+.nav-container-mobile .navigation-mobile .selected-page-mobile::after {
   content: "";
   position: absolute;
   width: 3px;
@@ -285,13 +320,13 @@ body {
           transform: translateY(-50%);
   background-color: #fff;
 }
-.nav-container .navigation-mobile__item {
+.nav-container-mobile .navigation-mobile__item {
   position: relative;
   font-family: "Barlow Condensed", sans-serif;
   letter-spacing: 2.7px;
   font-size: 1.6rem;
 }
-.nav-container .navigation-mobile__item:hover::after {
+.nav-container-mobile .navigation-mobile__item:hover::after {
   content: "";
   position: absolute;
   width: 3px;
@@ -302,17 +337,69 @@ body {
           transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.747);
 }
-.nav-container .navigation-mobile__item span {
+.nav-container-mobile .navigation-mobile__item span {
   font-weight: bold;
 }
-.nav-container .navigation-mobile__item a {
+.nav-container-mobile .navigation-mobile__item a {
   width: 100%;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
 }
-.nav-container .active {
+.nav-container-mobile .active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (min-width: 768px) {
+  .nav-container-mobile {
+    display: none;
+  }
+  .nav-container-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    padding-left: 3rem;
+    width: 100%;
+  }
+  .nav-container-desktop .navigation-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 3rem 2rem;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(40.7742px);
+            backdrop-filter: blur(40.7742px);
+  }
+  .nav-container-desktop .navigation-desktop__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 3rem;
+  }
+  .nav-container-desktop .navigation-desktop__item {
+    font-family: "Barlow Condensed", sans-serif;
+  }
+  .nav-container-desktop .navigation-desktop__item a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: white;
+    letter-spacing: 2.36px;
+  }
+  .nav-container-desktop .navigation-desktop__item span {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */
