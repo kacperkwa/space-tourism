@@ -54,7 +54,8 @@
 			pointer-events: none;
 		}
 
-		&::after {
+		&::after,
+		&::before {
 			content: '';
 			position: absolute;
 			width: 100%;
@@ -63,8 +64,17 @@
 			background-color: rgba($color: #fff, $alpha: 0.4);
 			transition: transform 0.3s;
 		}
-		&:hover::after {
-			transform: scale(1.5);
+		&::after{
+			animation: pulse 2s ease-out infinite;
+		}
+		&::before{
+			animation: pulse 2s  1s ease-out infinite;
+		}
+		@keyframes pulse {
+			100%{
+				transform: scale(1.5);
+				opacity: 0;
+			}
 		}
 	}
 }

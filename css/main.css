@@ -190,7 +190,7 @@ body {
   z-index: 1;
   pointer-events: none;
 }
-.header__circle::after {
+.header__circle::after, .header__circle::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -202,9 +202,27 @@ body {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.header__circle:hover::after {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+.header__circle::after {
+  -webkit-animation: pulse 2s ease-out infinite;
+          animation: pulse 2s ease-out infinite;
+}
+.header__circle::before {
+  -webkit-animation: pulse 2s 1s ease-out infinite;
+          animation: pulse 2s 1s ease-out infinite;
+}
+@-webkit-keyframes pulse {
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
 .nav-container {
