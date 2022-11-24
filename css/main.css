@@ -188,6 +188,7 @@ body {
 }
 .header__circle p {
   z-index: 1;
+  pointer-events: none;
 }
 .header__circle::after {
   content: "";
