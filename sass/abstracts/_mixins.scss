@@ -3,3 +3,13 @@
 	min-height: $size;
 	border-radius: 100%;
 }
+@mixin menu-hover($color){
+	content: '';
+				position: absolute;
+				width: 3px;
+				height: 160%;
+				right: 4rem;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: $color;
+}
