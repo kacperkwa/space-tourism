@@ -1,4 +1,5 @@
 @use '../abstracts/mixins' as m;
+@use '../abstracts/colors' as c;
 .nav-container-desktop {
 	display: none;
 }
@@ -50,7 +51,7 @@
 			letter-spacing: 2.7px;
 			font-size: 1.6rem;
 			&:hover::after {
-				@include m.menu-hover(rgba(255, 255, 255, 0.747));
+				@include m.menu-hover(c.$hoverMenuColor);
 			}
 
 			span {
@@ -82,25 +83,59 @@
 		.navigation-desktop {
 			display: flex;
 			justify-content: center;
-			padding: 3rem 2rem;
-			width: 65%;
+			padding: 4rem 2rem;
+			width: 60%;
 			background: rgba(255, 255, 255, 0.04);
 			backdrop-filter: blur(40.7742px);
 			&__list {
 				display: flex;
 				gap: 3rem;
 			}
+			.selected-page-desktop {
+				&::after {
+					@include m.menu-after-desktop(#fff);
+				}
+			}
 			&__item {
+				position: relative;
 				font-family: 'Barlow Condensed', sans-serif;
+				&:hover::after {
+					@include m.menu-after-desktop(c.$hoverMenuColor);
+				}
 				a {
-               text-transform: uppercase;
+					text-transform: uppercase;
 					text-decoration: none;
-               font-size: 1.4rem;
+					font-size: 1.4rem;
 					color: white;
-               letter-spacing: 2.36px;
+					letter-spacing: 2.36px;
 				}
 				span {
 					display: none;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.nav-container-desktop {
+		.navigation-desktop {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: -45%;
+				height: 1px;
+				width: 50%;
+				background-color: #9797979a;
+			}
+			&__item {
+				a {
+					font-size: 1.6rem;
+					letter-spacing: 2.7px;
+					span {
+						display: inline;
+						font-weight: bold;
+					}
 				}
 			}
 		}
