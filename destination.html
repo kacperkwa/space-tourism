@@ -23,8 +23,8 @@
             class="menu-button-img"></button>
       <nav class="navigation-mobile">
          <ul role="list" class="navigation-mobile__list">
-            <li class="navigation-mobile__item selected-page-mobile"><a href="#home"><span>00</span> home</a></li>
-            <li class="navigation-mobile__item"><a href="#"><span>01</span> destination</a></li>
+            <li class="navigation-mobile__item "><a href="index.html"><span>00</span> home</a></li>
+            <li class="navigation-mobile__item selected-page-mobile"><a href="#"><span>01</span> destination</a></li>
             <li class="navigation-mobile__item"><a href="#"><span>02</span> crew</a></li>
             <li class="navigation-mobile__item"><a href="#"><span>03</span> technology</a></li>
          </ul>
@@ -35,15 +35,40 @@
       <img class="nav-container-desktop__logo" src="./img/shared/logo.svg" alt="logo">
       <nav class="navigation-desktop">
          <ul role="list" class="navigation-desktop__list">
-            <li class="navigation-desktop__item selected-page-desktop"><a href="index.html"><span>00</span> home</a>
+            <li class="navigation-desktop__item"><a href="index.html"><span>00</span> home</a>
             </li>
-            <li class="navigation-desktop__item"><a href="#"><span>01</span> destination</a></li>
+            <li class="navigation-desktop__item selected-page-desktop"><a href="#"><span>01</span> destination</a></li>
             <li class="navigation-desktop__item"><a href="#"><span>02</span> crew</a></li>
             <li class="navigation-desktop__item"><a href="#"><span>03</span> technology</a></li>
          </ul>
       </nav>
    </div>
-   <main id="destination"></main>
+   <main id="destination" class="destination">
+      <section class="destination__container">
+         <div class="destination__images">
+            <h1 class="destination__heading"><span>01</span> pick your destination</h1>
+            <img src="./img/destination/image-moon.png" alt="moon">
+         </div>
+         <div class="destination__trip-information">
+            <nav class="destination__nav">
+               <ul role="list" class="destination__nav-list">
+                  <li class="destination__nav-item"><button class="btn moon-btn">moon</button></li>
+                  <li class="destination__nav-item"><button class="btn mars-btn">mars</button></li>
+                  <li class="destination__nav-item"><button class="btn europa-btn">europa</button></li>
+                  <li class="destination__nav-item"><button class="btn titan-btn">titan</button></li>
+               </ul>
+            </nav>
+            <h2 class="destination__planet-name">moon</h2>
+            <p class="destination__planet-description">See our planet as you’ve never seen it before. A perfect relaxing
+               trip away to help regain perspective and come back refreshed. While you’re there, take in some history by
+               visiting the Luna 2 and Apollo 11 landing sites.</p>
+            <div class="destination__distance-information">
+               <p class="destination__distance">384,400 km</p>
+               <p class="destination__travel-time">3 days</p>
+            </div>
+         </div>
+      </section>
+   </main>
 </body>
 
 </html>
