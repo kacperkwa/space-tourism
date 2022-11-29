@@ -1,7 +1,7 @@
 @use '../abstracts/mixins' as m;
 @use '../abstracts/colors' as c;
 .destination {
-	padding: 12rem 2rem;
+	padding: 12rem 2rem 0 2rem;
 	background-image: url(../img/destination/background-destination-mobile.jpg);
 	background-position: center;
 	background-size: cover;
@@ -11,15 +11,16 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		max-width: 1400px;
+		margin: 0 auto;
 		text-align: center;
-		gap: 2rem;
+		gap: 3rem;
 	}
 	&__images {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 4rem;
-		text-transform: uppercase;
 
 		img {
 			width: 50%;
@@ -30,6 +31,10 @@
 		font-weight: 400;
 		letter-spacing: 2.7px;
 		font-family: 'Barlow Condensed', sans-serif;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+		text-align: center;
+		margin-bottom: 4rem;
 		span {
 			font-weight: bold;
 			color: rgb(88, 90, 92);
@@ -43,7 +48,7 @@
 			position: relative;
 			font-size: 1.4rem;
 			letter-spacing: 2.36px;
-			color: c.$textColor;
+			color: #fff;
 			text-transform: uppercase;
 			font-family: 'Barlow Condensed', sans-serif;
 			&:hover::after {
@@ -73,13 +78,13 @@
 		line-height: 25px;
 		color: c.$textColor;
 		padding-bottom: 3rem;
-		margin-bottom: 3rem;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+		margin-bottom: 4rem;
+		border-bottom: 1px solid #383b4b;
 	}
 	&__distance-information {
 		display: flex;
 		flex-direction: column;
-		gap: 4rem;
+		gap: 5rem;
 	}
 	&__distance,
 	&__travel-time {
@@ -87,11 +92,107 @@
 		font-family: 'Bellefair', serif;
 		text-transform: uppercase;
 		font-size: 2.8rem;
+		color: #fff;
 	}
 	&__distance::before {
 		@include m.destination-distance('avg. distance');
 	}
 	&__travel-time::before {
 		@include m.destination-distance('est. travel time');
+	}
+}
+
+@media (min-width: 576px) {
+	.destination {
+		&__distance-information {
+			flex-direction: row;
+			justify-content: center;
+		}
+		&__distance::before,
+		&__travel-time::before {
+			top: -70%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 140%;
+		}
+	}
+}
+@media (min-width: 576px) {
+	.destination {
+		background-image: url(../img/destination/background-destination-tablet.jpg);
+		&__heading {
+			text-align: left;
+			font-size: 2rem;
+			letter-spacing: 3.38px;
+		}
+		&__container {
+			padding-left: 6rem;
+			padding-right: 6rem;
+		}
+		&__images {
+			img {
+				width: 60%;
+			}
+		}
+		&__nav-list {
+			.btn {
+				font-size: 1.6rem;
+				letter-spacing: 2.7px;
+			}
+		}
+		&__planet-name {
+			font-size: 8rem;
+		}
+		&__planet-description {
+			padding-bottom: 4rem;
+			margin-bottom: 3rem;
+			font-size: 1.6rem;
+		}
+		&__distance-information {
+			gap: 10rem;
+		}
+	}
+}
+@media (min-width: 998px) {
+	.destination {
+		background-image: url(../img/destination/background-destination-desktop.jpg);
+		padding-left: 2rem;
+		padding-right: 2rem;
+		&__heading {
+			max-width: 1400px;
+			margin: 0 auto 10rem;
+			font-size: 2.8rem;
+			letter-spacing: 4.72px;
+		}
+		&__container {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&__images {
+			min-width: 50%;
+			img {
+				width: 90%;
+			}
+		}
+		&__trip-information {
+			max-width: 40%;
+			align-items: flex-start;
+		}
+		&__planet-name {
+			font-size: 10rem;
+		}
+		&__planet-description {
+			padding-bottom: 5rem;
+			margin-bottom: 5rem;
+			font-size: 1.8rem;
+			text-align: left;
+		}
+		&__distance-information {
+			gap: 10rem;
+		}
+		&__distance::before,
+		&__travel-time::before {
+			top: -90%;
+		}
 	}
 }
