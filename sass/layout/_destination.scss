@@ -68,11 +68,30 @@
 		font-family: 'Bellefair', serif;
 		font-weight: 400;
 	}
-	&__planet-description{
+	&__planet-description {
 		font-size: 1.5rem;
 		line-height: 25px;
 		color: c.$textColor;
 		padding-bottom: 3rem;
+		margin-bottom: 3rem;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+	}
+	&__distance-information {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+	}
+	&__distance,
+	&__travel-time {
+		position: relative;
+		font-family: 'Bellefair', serif;
+		text-transform: uppercase;
+		font-size: 2.8rem;
+	}
+	&__distance::before {
+		@include m.destination-distance('avg. distance');
+	}
+	&__travel-time::before {
+		@include m.destination-distance('est. travel time');
 	}
 }
