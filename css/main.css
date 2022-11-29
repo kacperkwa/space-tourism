@@ -256,6 +256,50 @@ body {
     font-size: 3.2rem;
   }
 }
+@media (min-width: 992px) {
+  .header {
+    background-image: url(../img/home/background-home-desktop.jpg);
+  }
+  .header__container {
+    padding-top: 20rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header__upper-heading-text {
+    font-size: 2.8rem;
+    letter-spacing: 4.72px;
+  }
+  .header__title {
+    font-size: 15rem;
+  }
+  .header__text {
+    font-size: 18px;
+  }
+  .header__intro {
+    gap: 3rem;
+  }
+  .header__circle {
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 100%;
+    -ms-flex-item-align: end;
+        align-self: end;
+    margin-right: 4rem;
+    margin-bottom: 10rem;
+  }
+}
+@media (max-height: 600px) {
+  .header__circle {
+    display: none;
+  }
+}
 .nav-container-desktop {
   display: none;
 }
@@ -272,7 +316,7 @@ body {
   top: 0;
   left: 0;
   padding: 2rem;
-  z-index: 10;
+  z-index: 100;
 }
 .nav-container-mobile__menu-button {
   z-index: 15;

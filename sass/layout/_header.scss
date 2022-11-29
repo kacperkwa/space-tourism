@@ -84,7 +84,7 @@
 @media (min-width: 576px) {
 	.header {
 		background-image: url(../img/home/background-home-tablet.jpg);
-		&__container{
+		&__container {
 			padding-top: 20rem;
 		}
 		&__upper-heading-text {
@@ -97,7 +97,7 @@
 		&__text {
 			font-size: 16px;
 		}
-		&__intro{
+		&__intro {
 			gap: 2rem;
 		}
 		&__circle {
@@ -105,6 +105,44 @@
 			p {
 				font-size: 3.2rem;
 			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.header {
+		background-image: url(../img/home/background-home-desktop.jpg);
+		&__container {
+			padding-top: 20rem;
+			max-width: 1400px;
+			margin: 0 auto;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&__upper-heading-text {
+			font-size: 2.8rem;
+			letter-spacing: 4.72px;
+		}
+		&__title {
+			font-size: 15rem;
+		}
+		&__text {
+			font-size: 18px;
+		}
+		&__intro {
+			gap: 3rem;
+		}
+		&__circle {
+			@include m.circle(300px);
+			align-self: end;
+			margin-right: 4rem;
+			margin-bottom: 10rem;
+		}
+	}
+}
+@media (max-height: 600px) {
+	.header {
+		&__circle {
+			display: none;
 		}
 	}
 }
