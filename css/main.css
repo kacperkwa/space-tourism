@@ -736,7 +736,7 @@ body {
 }
 .crew {
   background-image: url(../img/crew/background-crew-mobile.jpg);
-  padding: 8rem 2rem 0 2rem;
+  padding: 8rem 2rem 2rem 2rem;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
