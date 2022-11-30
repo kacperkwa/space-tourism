@@ -486,7 +486,7 @@ body {
   }
 }
 .destination {
-  padding: 12rem 2rem 0 2rem;
+  padding: 8rem 2rem 0 2rem;
   background-image: url(../img/destination/background-destination-mobile.jpg);
   background-position: center;
   background-size: cover;
@@ -733,4 +733,97 @@ body {
   .destination__distance::before, .destination__travel-time::before {
     top: -90%;
   }
+}
+.crew {
+  background-image: url(../img/crew/background-crew-mobile.jpg);
+  padding: 8rem 2rem 0 2rem;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+.crew__heading {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 2.7px;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.crew__heading span {
+  font-weight: bold;
+  color: rgb(88, 90, 92);
+}
+.crew__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.crew__img {
+  width: 55%;
+}
+.crew__content-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #383b4b;
+}
+.crew__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+.crew__button {
+  padding: 1rem;
+  background-color: #979797;
+  border-radius: 100%;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.crew__button:hover {
+  background-color: #fff;
+}
+.crew__information-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.crew__member-spec {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: #979797;
+}
+.crew__member-name {
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

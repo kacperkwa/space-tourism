@@ -35,3 +35,17 @@
 	color: c.$textColor;
 	letter-spacing: 2.36px;
 }
+@mixin heading-styles {
+	font-size: 1.6rem;
+	font-weight: 400;
+	letter-spacing: 2.7px;
+	font-family: 'Barlow Condensed', sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	text-align: center;
+	margin-bottom: 4rem;
+	span {
+		font-weight: bold;
+		color: rgb(88, 90, 92);
+	}
+}
