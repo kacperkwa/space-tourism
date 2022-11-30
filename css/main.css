@@ -574,6 +574,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 2rem;
   gap: 2rem;
 }
 .destination__planet-name {
