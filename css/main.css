@@ -801,6 +801,9 @@ body {
 .crew__button:hover {
   background-color: #fff;
 }
+.crew .selected-member {
+  background-color: #fff;
+}
 .crew__information-box {
   display: -webkit-box;
   display: -ms-flexbox;

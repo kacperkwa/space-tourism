@@ -14,6 +14,7 @@ const memberSpecialization = document.querySelector('.crew__member-spec');
 const memberName = document.querySelector('.crew__member-name');
 const memberDesc = document.querySelector('.crew__member-desc');
 const memberImg = document.querySelector('.crew__img');
+const memberButtons = document.querySelectorAll('.crew__button ');
 const URL = '../data.json';
 
 const changeContent = e => {
@@ -45,21 +46,37 @@ const changeContent = e => {
 				memberSpecialization.textContent = `${firstMemberSpecialization}`;
 				memberName.textContent = `${firstMemberName}`;
 				memberDesc.textContent = `${firstMemberDescription}`;
+				memberButtons.forEach(button => {
+					button.classList.remove('selected-member');
+				});
+				firstButton.classList.add('selected-member');
 			} else if (e.target === secondButton) {
 				memberImg.setAttribute('src', secondMemberImg);
 				memberSpecialization.textContent = `${secondMemberSpecialization}`;
 				memberName.textContent = `${secondMemberName}`;
 				memberDesc.textContent = `${secondMemberDescription}`;
+				memberButtons.forEach(button => {
+					button.classList.remove('selected-member');
+				});
+				secondButton.classList.add('selected-member');
 			} else if (e.target === thirdButton) {
 				memberImg.setAttribute('src', thirdMemberImg);
 				memberSpecialization.textContent = `${thirdMemberSpecialization}`;
 				memberName.textContent = `${thirdMemberName}`;
 				memberDesc.textContent = `${thirdMemberDescription}`;
+				memberButtons.forEach(button => {
+					button.classList.remove('selected-member');
+				});
+				thirdButton.classList.add('selected-member');
 			} else if (e.target === fourthButton) {
 				memberImg.setAttribute('src', fourthMemberImg);
 				memberSpecialization.textContent = `${fourthMemberSpecialization}`;
 				memberName.textContent = `${fourthMemberName}`;
 				memberDesc.textContent = `${fourthMemberDescription}`;
+				memberButtons.forEach(button => {
+					button.classList.remove('selected-member');
+				});
+				fourthButton.classList.add('selected-member');
 			}
 		})
 		.catch(err => console.log(err));
@@ -68,7 +85,6 @@ const showMenu = () => {
 	navigationMobile.classList.toggle('active');
 	menuButtonImg.classList.toggle('menu-button-img-change');
 };
-
 menuButton.addEventListener('click', showMenu);
 firstButton.addEventListener('click', changeContent);
 secondButton.addEventListener('click', changeContent);
