@@ -15,7 +15,7 @@
 		align-items: center;
 	}
 	&__img {
-		width: 55%;
+		height: clamp(50vw, 40vh, 70vw);
 	}
 	&__content-box {
 		display: flex;

@@ -768,7 +768,7 @@ body {
           align-items: center;
 }
 .crew__img {
-  width: 55%;
+  height: clamp(50vw, 40vh, 70vw);
 }
 .crew__content-box {
   display: -webkit-box;
