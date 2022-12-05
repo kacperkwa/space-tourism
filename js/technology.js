@@ -4,12 +4,22 @@ const menuButtonImg = document.querySelector('.menu-button-img');
 const firstButton = document.querySelector('.technology__btn--first');
 const secondButton = document.querySelector('.technology__btn--second');
 const thirdButton = document.querySelector('.technology__btn--third');
+const technologyButtons = document.querySelectorAll('.technology__btn');
 const technologyImg = document.querySelector('.technology__img');
 const technologyName = document.querySelector('.technology__name');
 const technologyDescription = document.querySelector(
 	'.technology__description'
 );
+const selectedTechnology = document.querySelector('.selected-technology');
 const URL = '../data.json';
+
+const addSelectedClass = e => {
+	technologyButtons.forEach(button => {
+		button.classList.remove('selected-technology');
+	});
+	e.target.classList.add('selected-technology');
+};
+console.log(window.matchMedia('min-width:700'));
 const changeContent = e => {
 	fetch(URL)
 		.then(res => res.json())
@@ -31,14 +41,17 @@ const changeContent = e => {
 				technologyImg.setAttribute('src', firstTechImg);
 				technologyName.textContent = `${firstTechName}`;
 				technologyDescription.textContent = `${firstTechDescription}`;
+				addSelectedClass(e);
 			} else if (e.target === secondButton) {
 				technologyImg.setAttribute('src', secondTechImg);
 				technologyName.textContent = `${secondTechName}`;
 				technologyDescription.textContent = `${secondTechDescription}`;
+				addSelectedClass(e);
 			} else if (e.target === thirdButton) {
 				technologyImg.setAttribute('src', thirdTechImg);
 				technologyName.textContent = `${thirdTechName}`;
 				technologyDescription.textContent = `${thirdTechDescription}`;
+				addSelectedClass(e);
 			}
 		})
 		.catch(err => console.log(err));

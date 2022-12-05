@@ -467,6 +467,9 @@ body {
   }
 }
 @media (min-width: 992px) {
+  .nav-container-desktop {
+    margin-top: 2rem;
+  }
   .nav-container-desktop .navigation-desktop::before {
     content: "";
     position: absolute;
@@ -971,6 +974,7 @@ body {
   gap: 2rem;
 }
 .technology__img {
+  width: 100vw;
   min-height: 25vh;
 }
 .technology__content-box {

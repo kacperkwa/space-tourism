@@ -118,6 +118,7 @@
 }
 @media (min-width: 992px) {
 	.nav-container-desktop {
+		margin-top: 2rem;
 		.navigation-desktop {
 			&::before {
 				content: '';
