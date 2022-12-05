@@ -102,7 +102,7 @@
 		}
 	}
 }
-@media (min-width: 998px) {
+@media (min-width: 1035px) {
 	.crew {
 		display: flex;
 		justify-content: center;
@@ -113,7 +113,7 @@
 			flex-direction: row-reverse;
 			max-width: 1400px;
 			margin: 0 auto;
-			gap: 1rem;
+			gap: 0rem;
 		}
 		&__heading {
 			font-size: 2.8rem;
@@ -124,8 +124,9 @@
 			max-width: 40%;
 		}
 		&__img {
-			height: 78vh;
-			align-self: end;
+			height: 79vh;
+		
+		
 		}
 		&__member-spec {
 			font-size: 3.2rem;
@@ -136,7 +137,7 @@
 		&__member-desc {
 			font-size: 1.8rem;
 		}
-		&__nav{
+		&__nav {
 			align-self: flex-start;
 			margin-left: 2rem;
 			margin-top: 3rem;

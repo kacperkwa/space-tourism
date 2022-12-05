@@ -881,7 +881,7 @@ body {
     line-height: 28px;
   }
 }
-@media (min-width: 998px) {
+@media (min-width: 1035px) {
   .crew {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -905,7 +905,7 @@ body {
             flex-direction: row-reverse;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 1rem;
+    gap: 0rem;
   }
   .crew__heading {
     font-size: 2.8rem;
@@ -917,9 +917,7 @@ body {
     max-width: 40%;
   }
   .crew__img {
-    height: 78vh;
-    -ms-flex-item-align: end;
-        align-self: end;
+    height: 79vh;
   }
   .crew__member-spec {
     font-size: 3.2rem;
@@ -938,7 +936,7 @@ body {
   }
 }
 .technology {
-  padding: 12rem 0 2rem;
+  padding: 10rem 0 2rem;
   background-image: url(../../img/technology/background-technology-mobile.jpg);
   background-size: cover;
   background-position: center;
@@ -957,4 +955,103 @@ body {
 .technology__heading span {
   font-weight: bold;
   color: rgb(88, 90, 92);
+}
+.technology__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+.technology__img {
+  min-height: 25vh;
+}
+.technology__content-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+.technology__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+}
+.technology__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  font-family: "Bellefair", serif;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+.technology__btn:hover {
+  background-color: white;
+  color: #0b0d17;
+}
+.technology .selected-technology {
+  background-color: white;
+  color: #0b0d17;
+}
+.technology__text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.technology__title {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 2.38px;
+  color: #d0d6f9;
+}
+.technology__name {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+.technology__description {
+  font-size: 1.5rem;
+  line-height: 25px;
 }/*# sourceMappingURL=main.css.map */

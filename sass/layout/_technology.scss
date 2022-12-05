@@ -1,12 +1,79 @@
 @use '../abstracts/colors' as c;
 @use '../abstracts/mixins' as m;
 .technology {
-	padding: 12rem 0 2rem;
+	padding: 10rem 0 2rem;
 	background-image: url(../../img/technology/background-technology-mobile.jpg);
 	background-size: cover;
 	background-position: center;
 	min-height: 100vh;
 	&__heading {
 		@include m.heading-styles;
+	}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 2rem;
+	}
+	&__img {
+		min-height: 25vh;
+	}
+	&__content-box {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	&__nav-list {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+	}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 100%;
+		border: 1px solid rgba(255, 255, 255);
+		color: white;
+		font-family: 'Bellefair', serif;
+		transition: background-color 0.3s, color 0.3s;
+		&:hover {
+			background-color: white;
+			color: #0b0d17;
+		}
+	}
+	.selected-technology {
+		background-color: white;
+		color: #0b0d17;
+	}
+	&__text-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		padding: 1rem 2rem;
+		text-align: center;
+	}
+	&__title {
+		text-transform: uppercase;
+		font-family: 'Barlow Condensed', sans-serif;
+		font-weight: 400;
+		font-size: 1.6rem;
+		letter-spacing: 2.38px;
+		color: c.$textColor;
+	}
+	&__name {
+		text-transform: uppercase;
+		font-size: 2.4rem;
+		font-weight: 400;
+	}
+	&__description {
+		font-size: 1.5rem;
+		line-height: 25px;
 	}
 }
