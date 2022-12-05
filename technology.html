@@ -12,7 +12,7 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&family=Barlow:wght@300;400;600&family=Bellefair&display=swap"
       rel="stylesheet">
-   <script src="./js/crew.js" defer></script>
+   <script src="./js/technology.js" defer></script>
 </head>
 
 <body>
@@ -24,8 +24,8 @@
       <nav class="navigation-mobile">
          <ul role="list" class="navigation-mobile__list">
             <li class="navigation-mobile__item "><a href="index.html"><span>00</span> home</a></li>
-            <li class="navigation-mobile__item"><a href="destination.html"><span>01</span> destination</a></li>
-            <li class="navigation-mobile__item selected-page-mobile"><a href="#"><span>02</span> crew</a></li>
+            <li class="navigation-mobile__item selected-page-mobile"><a href="#"><span>01</span> destination</a></li>
+            <li class="navigation-mobile__item"><a href="crew.html"><span>02</span> crew</a></li>
             <li class="navigation-mobile__item"><a href="technology.html"><span>03</span> technology</a></li>
          </ul>
       </nav>
@@ -37,32 +37,34 @@
          <ul role="list" class="navigation-desktop__list">
             <li class="navigation-desktop__item"><a href="index.html"><span>00</span> home</a>
             </li>
-            <li class="navigation-desktop__item "><a href="destination.html"><span>01</span> destination</a></li>
-            <li class="navigation-desktop__item selected-page-desktop"><a href="crew.html"><span>02</span> crew</a></li>
+            <li class="navigation-desktop__item selected-page-desktop"><a href="destination.html"><span>01</span>
+                  destination</a></li>
+            <li class="navigation-desktop__item"><a href="crew.html"><span>02</span> crew</a></li>
             <li class="navigation-desktop__item"><a href="technology.html"><span>03</span> technology</a></li>
          </ul>
       </nav>
    </div>
-   <main class="crew" id="crew">
-      <h1 class="crew__heading"><span>02</span> meet your crew</h1>
-      <section class="crew__container">
-         <img class="crew__img" src="./img/crew/image-douglas-hurley.webp" alt="member of crew">
-         <div class="crew__content-box">
-            <nav class="crew__nav">
-               <ul class="crew__nav-list" role="list">
-                  <li class="crew__nav-item"><button
-                        class="crew__button crew__nav-item--first selected-member"></button></li>
-                  <li class="crew__nav-item"><button class="crew__button crew__nav-item--second"></button></li>
-                  <li class="crew__nav-item"><button class="crew__button crew__nav-item--third"></button></li>
-                  <li class="crew__nav-item"><button class="crew__button crew__nav-item--fourth"></button></li>
+   <main class="technology" id="technology">
+      <h1 class="technology__heading"><span>03</span> space launch 101</h1>
+      <section class="technology__container">
+         <img src="./img/technology/image-launch-vehicle-landscape.jpg" alt="launch vehicle">
+         <div class="technology__content-box">
+            <nav class="technology__nav">
+               <ul class="technology__nav-list" role="list">
+                  <li class="technology__nav-item"><button class="technology__btn technology__btn--first">1</button>
+                  </li>
+                  <li class="technology__nav-item"><button class="technology__btn technology__btn--second">2</button>
+                  </li>
+                  <li class="technology__nav-item"><button class="technology__btn technology__btn--third">2</button>
+                  </li>
                </ul>
             </nav>
-            <div class="crew__information-box">
-               <h2 class="crew__member-spec">commander</h2>
-               <p class="crew__member-name">douglas hurley</p>
-               <p class="crew__member-desc">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and
-                  former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.
-               </p>
+            <div class="technology__text-box">
+               <h2 class="technology__title">the terminology...</h2>
+               <p class="technology__description">A launch vehicle or carrier rocket is a rocket-propelled vehicle used
+                  to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier
+                  rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight
+                  on the launch pad!</p>
             </div>
          </div>
       </section>

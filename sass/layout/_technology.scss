@@ -1,0 +1,12 @@
+@use '../abstracts/colors' as c;
+@use '../abstracts/mixins' as m;
+.technology {
+	padding: 12rem 0 2rem;
+	background-image: url(../../img/technology/background-technology-mobile.jpg);
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+	&__heading {
+		@include m.heading-styles;
+	}
+}
