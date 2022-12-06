@@ -13,62 +13,43 @@ const memberImg = document.querySelector('.crew__img');
 const memberButtons = document.querySelectorAll('.crew__button ');
 const URL = '../data.json';
 
+const dataChange = (name, desc, img, spec) => {
+	memberName.textContent = `${name}`;
+	memberDesc.textContent = `${desc}`;
+	memberImg.setAttribute('src', img);
+	memberSpecialization.textContent = `${spec}`;
+};
 const changeContent = e => {
 	fetch(URL)
 		.then(res => res.json())
 		.then(data => {
-			//first member
-			const firstMemberImg = data.crew[0].images.png;
-			const firstMemberName = data.crew[0].name;
-			const firstMemberSpecialization = data.crew[0].role;
-			const firstMemberDescription = data.crew[0].bio;
-			//second
-			const secondMemberImg = data.crew[1].images.png;
-			const secondMemberName = data.crew[1].name;
-			const secondMemberSpecialization = data.crew[1].role;
-			const secondMemberDescription = data.crew[1].bio;
-			//third
-			const thirdMemberImg = data.crew[2].images.png;
-			const thirdMemberName = data.crew[2].name;
-			const thirdMemberSpecialization = data.crew[2].role;
-			const thirdMemberDescription = data.crew[2].bio;
-			//forth
-			const fourthMemberImg = data.crew[3].images.png;
-			const fourthMemberName = data.crew[3].name;
-			const fourthMemberSpecialization = data.crew[3].role;
-			const fourthMemberDescription = data.crew[3].bio;
+			const memberContent = id => {
+				const DataName = data.crew[id].name;
+				const DataDescription = data.crew[id].bio;
+				const DataImg = data.crew[id].images.png;
+				const DataSpecialization = data.crew[id].role;
+				dataChange(DataName, DataDescription, DataImg, DataSpecialization);
+			};
 			if (e.target === firstButton) {
-				memberImg.setAttribute('src', firstMemberImg);
-				memberSpecialization.textContent = `${firstMemberSpecialization}`;
-				memberName.textContent = `${firstMemberName}`;
-				memberDesc.textContent = `${firstMemberDescription}`;
+				memberContent(0);
 				memberButtons.forEach(button => {
 					button.classList.remove('selected-member');
 				});
 				firstButton.classList.add('selected-member');
 			} else if (e.target === secondButton) {
-				memberImg.setAttribute('src', secondMemberImg);
-				memberSpecialization.textContent = `${secondMemberSpecialization}`;
-				memberName.textContent = `${secondMemberName}`;
-				memberDesc.textContent = `${secondMemberDescription}`;
+				memberContent(1);
 				memberButtons.forEach(button => {
 					button.classList.remove('selected-member');
 				});
 				secondButton.classList.add('selected-member');
 			} else if (e.target === thirdButton) {
-				memberImg.setAttribute('src', thirdMemberImg);
-				memberSpecialization.textContent = `${thirdMemberSpecialization}`;
-				memberName.textContent = `${thirdMemberName}`;
-				memberDesc.textContent = `${thirdMemberDescription}`;
+				memberContent(2);
 				memberButtons.forEach(button => {
 					button.classList.remove('selected-member');
 				});
 				thirdButton.classList.add('selected-member');
 			} else if (e.target === fourthButton) {
-				memberImg.setAttribute('src', fourthMemberImg);
-				memberSpecialization.textContent = `${fourthMemberSpecialization}`;
-				memberName.textContent = `${fourthMemberName}`;
-				memberDesc.textContent = `${fourthMemberDescription}`;
+				memberContent(3);
 				memberButtons.forEach(button => {
 					button.classList.remove('selected-member');
 				});
@@ -82,7 +63,6 @@ const showMenu = () => {
 	menuButtonImg.classList.toggle('menu-button-img-change');
 };
 menuButton.addEventListener('click', showMenu);
-firstButton.addEventListener('click', changeContent);
-secondButton.addEventListener('click', changeContent);
-thirdButton.addEventListener('click', changeContent);
-fourthButton.addEventListener('click', changeContent);
+memberButtons.forEach(button =>
+	button.addEventListener('click', changeContent)
+);

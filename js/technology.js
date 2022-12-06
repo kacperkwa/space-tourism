@@ -19,38 +19,30 @@ const addSelectedClass = e => {
 	});
 	e.target.classList.add('selected-technology');
 };
-console.log(window.matchMedia('min-width:700'));
+const dataChange = (img, name, technology) => {
+	technologyImg.setAttribute('src', img);
+	technologyName.textContent = `${name}`;
+	technologyDescription.textContent = `${technology}`;
+};
 const changeContent = e => {
 	fetch(URL)
 		.then(res => res.json())
 		.then(data => {
-			//first technology
-			const firstTechImg = data.technology[0].images.landscape;
-			const firstTechName = data.technology[0].name;
-			const firstTechDescription = data.technology[0].description;
-			//second technology
-			const secondTechImg = data.technology[1].images.landscape;
-			const secondTechName = data.technology[1].name;
-			const secondTechDescription = data.technology[1].description;
-			//third technology
-			const thirdTechImg = data.technology[2].images.landscape;
-			const thirdTechName = data.technology[2].name;
-			const thirdTechDescription = data.technology[2].description;
+			const technologyContent = id => {
+				const TechImg = data.technology[id].images.landscape;
+				const TechName = data.technology[id].name;
+				const TechDescription = data.technology[id].description;
+				dataChange(TechImg, TechName, TechDescription);
+			};
 
 			if (e.target === firstButton) {
-				technologyImg.setAttribute('src', firstTechImg);
-				technologyName.textContent = `${firstTechName}`;
-				technologyDescription.textContent = `${firstTechDescription}`;
+				technologyContent(0);
 				addSelectedClass(e);
 			} else if (e.target === secondButton) {
-				technologyImg.setAttribute('src', secondTechImg);
-				technologyName.textContent = `${secondTechName}`;
-				technologyDescription.textContent = `${secondTechDescription}`;
+				technologyContent(1);
 				addSelectedClass(e);
 			} else if (e.target === thirdButton) {
-				technologyImg.setAttribute('src', thirdTechImg);
-				technologyName.textContent = `${thirdTechName}`;
-				technologyDescription.textContent = `${thirdTechDescription}`;
+				technologyContent(2);
 				addSelectedClass(e);
 			}
 		})
@@ -63,6 +55,6 @@ const showMenu = () => {
 };
 
 menuButton.addEventListener('click', showMenu);
-firstButton.addEventListener('click', changeContent);
-secondButton.addEventListener('click', changeContent);
-thirdButton.addEventListener('click', changeContent);
+technologyButtons.forEach(button =>
+	button.addEventListener('click', changeContent)
+);
