@@ -840,7 +840,7 @@ body {
 
 @media (min-width: 768px) {
   .crew {
-    background-image: url(../../img/crew/background-crew-tablet.jpg);
+    background-image: url(../img/crew/background-crew-tablet.jpg);
   }
   .crew__heading {
     text-align: left;
