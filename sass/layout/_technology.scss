@@ -6,6 +6,9 @@
 	background-size: cover;
 	background-position: center;
 	min-height: 100vh;
+	&__img-desktop {
+		display: none;
+	}
 	&__heading {
 		@include m.heading-styles;
 	}
@@ -18,7 +21,7 @@
 	}
 	&__img {
 		width: 100vw;
-		min-height: 25vh;
+		// min-height: 25vh;
 	}
 	&__content-box {
 		display: flex;
@@ -79,4 +82,98 @@
 	}
 }
 @media (min-width: 700px) {
+	.technology {
+		padding-top: 12rem;
+		background-image: url(../img/technology/background-technology-tablet.jpg);
+		&__container {
+			padding-top: 3rem;
+			gap: 5rem;
+		}
+		&__heading {
+			text-align: left;
+			margin-left: 3rem;
+			font-size: 2rem;
+			letter-spacing: 3.38px;
+		}
+		&__btn {
+			width: 6rem;
+			height: 6rem;
+			font-size: 2.4rem;
+		}
+		&__content-box {
+			gap: 4rem;
+		}
+		&__text-box {
+			margin: 0 auto;
+			max-width: 70%;
+		}
+		&__title {
+			letter-spacing: 2.7px;
+		}
+		&__name {
+			font-size: 4rem;
+		}
+		&__description {
+			font-size: 1.6rem;
+			line-height: 28px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.technology {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding-top: 13rem;
+		background-image: url(../img/technology/background-technology-desktop.jpg);
+		
+		&__img {
+			display: none;
+		}
+		&__img-desktop {
+			display: block;
+			min-width: 33%;
+		}
+		&__heading {
+			font-size: 2.8rem;
+			margin-left: 6rem;
+		}
+		&__container {
+			flex-direction: row-reverse;
+			gap: 10rem;
+		}
+		&__content-box {
+			flex-direction: row;
+			gap: 5rem;
+			justify-content: center;
+			padding-left: 3rem;
+			justify-self: center;
+		}
+		&__text-box {
+			padding: 0;
+			margin: 0;
+			align-items: flex-start;
+			text-align: left;
+			max-width: 50%;
+		}
+		&__btn {
+			width: 80px;
+			height: 80px;
+			font-size: 3.2rem;
+		}
+		&__nav {
+			display: flex;
+			height: 100%;
+		}
+		&__nav-list {
+			flex-direction: column;
+		}
+		&__name {
+			font-size: 5.6rem;
+		}
+		&__description {
+			font-size: 1.8rem;
+			line-height: 32px;
+		}
+	}
 }

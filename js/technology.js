@@ -6,6 +6,7 @@ const secondButton = document.querySelector('.technology__btn--second');
 const thirdButton = document.querySelector('.technology__btn--third');
 const technologyButtons = document.querySelectorAll('.technology__btn');
 const technologyImg = document.querySelector('.technology__img');
+const technologyImgDesktop = document.querySelector('.technology__img-desktop');
 const technologyName = document.querySelector('.technology__name');
 const technologyDescription = document.querySelector(
 	'.technology__description'
@@ -19,8 +20,9 @@ const addSelectedClass = e => {
 	});
 	e.target.classList.add('selected-technology');
 };
-const dataChange = (img, name, technology) => {
+const dataChange = (img, name, technology, imgDesktop) => {
 	technologyImg.setAttribute('src', img);
+	technologyImgDesktop.setAttribute('src', imgDesktop);
 	technologyName.textContent = `${name}`;
 	technologyDescription.textContent = `${technology}`;
 };
@@ -28,11 +30,13 @@ const changeContent = e => {
 	fetch(URL)
 		.then(res => res.json())
 		.then(data => {
+			console.log(data);
 			const technologyContent = id => {
-				const TechImg = data.technology[id].images.landscape;
-				const TechName = data.technology[id].name;
-				const TechDescription = data.technology[id].description;
-				dataChange(TechImg, TechName, TechDescription);
+				const techImg = data.technology[id].images.landscape;
+				const techImgDesktop = data.technology[id].images.portrait;
+				const techName = data.technology[id].name;
+				const techDescription = data.technology[id].description;
+				dataChange(techImg, techName, techDescription, techImgDesktop);
 			};
 
 			if (e.target === firstButton) {

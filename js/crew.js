@@ -24,11 +24,11 @@ const changeContent = e => {
 		.then(res => res.json())
 		.then(data => {
 			const memberContent = id => {
-				const DataName = data.crew[id].name;
-				const DataDescription = data.crew[id].bio;
-				const DataImg = data.crew[id].images.png;
-				const DataSpecialization = data.crew[id].role;
-				dataChange(DataName, DataDescription, DataImg, DataSpecialization);
+				const dataName = data.crew[id].name;
+				const dataDescription = data.crew[id].bio;
+				const dataImg = data.crew[id].images.png;
+				const dataSpecialization = data.crew[id].role;
+				dataChange(dataName, dataDescription, dataImg, dataSpecialization);
 			};
 			if (e.target === firstButton) {
 				memberContent(0);
