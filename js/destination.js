@@ -42,15 +42,11 @@ const changeContent = e => {
 					planetTravel
 				);
 			};
-			if (e.target === moonBtn) {
-				planetContent(0);
-			} else if (e.target === marsBtn) {
-				planetContent(1);
-			} else if (e.target === europaBtn) {
-				planetContent(2);
-			} else if (e.target === titanBtn) {
-				planetContent(3);
-			}
+			destinationButtons.forEach(function (button, index) {
+				button.addEventListener('click', function () {
+					planetContent(index);
+				});
+			});
 		})
 		.catch(err => console.log(err));
 };

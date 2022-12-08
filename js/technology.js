@@ -1,9 +1,6 @@
 const menuButton = document.querySelector('.nav-container-mobile__menu-button');
 const navigationMobile = document.querySelector('.navigation-mobile');
 const menuButtonImg = document.querySelector('.menu-button-img');
-const firstButton = document.querySelector('.technology__btn--first');
-const secondButton = document.querySelector('.technology__btn--second');
-const thirdButton = document.querySelector('.technology__btn--third');
 const technologyButtons = document.querySelectorAll('.technology__btn');
 const technologyImg = document.querySelector('.technology__img');
 const technologyImgDesktop = document.querySelector('.technology__img-desktop');
@@ -30,7 +27,6 @@ const changeContent = e => {
 	fetch(URL)
 		.then(res => res.json())
 		.then(data => {
-			console.log(data);
 			const technologyContent = id => {
 				const techImg = data.technology[id].images.landscape;
 				const techImgDesktop = data.technology[id].images.portrait;
@@ -39,26 +35,22 @@ const changeContent = e => {
 				dataChange(techImg, techName, techDescription, techImgDesktop);
 			};
 
-			if (e.target === firstButton) {
-				technologyContent(0);
-				addSelectedClass(e);
-			} else if (e.target === secondButton) {
-				technologyContent(1);
-				addSelectedClass(e);
-			} else if (e.target === thirdButton) {
-				technologyContent(2);
-				addSelectedClass(e);
-			}
+			technologyButtons.forEach(function (button, index) {
+				button.addEventListener('click', function () {
+					technologyContent(index);
+				});
+				button.classList.remove('selected-technology');
+				e.target.classList.add('selected-technology');
+			});
 		})
 		.catch(err => console.log(err));
 };
+technologyButtons.forEach(button =>
+	button.addEventListener('click', changeContent)
+);
 
 const showMenu = () => {
 	navigationMobile.classList.toggle('active');
 	menuButtonImg.classList.toggle('menu-button-img-change');
 };
-
 menuButton.addEventListener('click', showMenu);
-technologyButtons.forEach(button =>
-	button.addEventListener('click', changeContent)
-);
