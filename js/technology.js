@@ -10,7 +10,8 @@ const technologyDescription = document.querySelector(
 );
 const selectedTechnology = document.querySelector('.selected-technology');
 const URL = '../data.json';
-
+const buttonsArr = Array.from(technologyButtons);
+console.log(buttonsArr);
 const addSelectedClass = e => {
 	technologyButtons.forEach(button => {
 		button.classList.remove('selected-technology');
@@ -34,23 +35,21 @@ const changeContent = e => {
 				const techDescription = data.technology[id].description;
 				dataChange(techImg, techName, techDescription, techImgDesktop);
 			};
-
-			technologyButtons.forEach(function (button, index) {
-				button.addEventListener('click', function () {
-					technologyContent(index);
-				});
+			buttonsArr.forEach(function (button) {
+				const index = buttonsArr.indexOf(e.target);
+				technologyContent(index);
 				button.classList.remove('selected-technology');
 				e.target.classList.add('selected-technology');
 			});
 		})
 		.catch(err => console.log(err));
 };
-technologyButtons.forEach(button =>
-	button.addEventListener('click', changeContent)
-);
 
 const showMenu = () => {
 	navigationMobile.classList.toggle('active');
 	menuButtonImg.classList.toggle('menu-button-img-change');
 };
 menuButton.addEventListener('click', showMenu);
+technologyButtons.forEach(button =>
+	button.addEventListener('click', changeContent)
+);

@@ -3,6 +3,7 @@ const navigationMobile = document.querySelector('.navigation-mobile');
 const menuButtonImg = document.querySelector('.menu-button-img');
 const destinationContent = document.querySelector('.destination');
 const destinationButtons = document.querySelectorAll('.destination-btn');
+const buttonsArr = Array.from(destinationButtons);
 const moonBtn = document.querySelector('.moon-btn');
 const marsBtn = document.querySelector('.mars-btn');
 const europaBtn = document.querySelector('.europa-btn');
@@ -42,10 +43,11 @@ const changeContent = e => {
 					planetTravel
 				);
 			};
-			destinationButtons.forEach(function (button, index) {
-				button.addEventListener('click', function () {
-					planetContent(index);
-				});
+			buttonsArr.forEach(function (button) {
+				const index = buttonsArr.indexOf(e.target);
+				planetContent(index);
+				button.classList.remove('selected-planet');
+				e.target.classList.add('selected-planet');
 			});
 		})
 		.catch(err => console.log(err));

@@ -7,6 +7,7 @@ const memberName = document.querySelector('.crew__member-name');
 const memberDesc = document.querySelector('.crew__member-desc');
 const memberImg = document.querySelector('.crew__img');
 const memberButtons = document.querySelectorAll('.crew__button ');
+const buttonsArr = Array.from(memberButtons);
 const URL = '../data.json';
 
 const dataChange = (name, desc, img, spec) => {
@@ -26,10 +27,9 @@ const changeContent = e => {
 				const dataSpecialization = data.crew[id].role;
 				dataChange(dataName, dataDescription, dataImg, dataSpecialization);
 			};
-			memberButtons.forEach(function (button, index) {
-				button.addEventListener('click', function () {
-					memberContent(index);
-				});
+			buttonsArr.forEach(function (button) {
+				const index = buttonsArr.indexOf(e.target);
+				memberContent(index);
 				button.classList.remove('selected-member');
 				e.target.classList.add('selected-member');
 			});
